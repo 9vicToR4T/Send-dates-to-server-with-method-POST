@@ -35,10 +35,14 @@ window.addEventListener("DOMContentLoaded", () => {
     //   }
     // });
 
-    getResources("http://localhost:3000/people", obj) //cererea spre server. ne intoarce un Promes
-                                               //obj e obiectul pe care il vom transforma in JSON
-      .then((data) => createCards(data)) //aici deja putem prelucra datele
-      .catch((err) => console.error(err));
+    // getResources("http://localhost:3000/people", obj) //cererea spre server. ne intoarce un Promes
+    //                                            //obj e obiectul pe care il vom transforma in JSON
+    //   .then((data) => createCards(data)) //aici deja putem prelucra datele
+    //   .catch((err) => console.error(err));
+
+
+    //axios singur transforma datele in JSON. Indicam din prima metoda POST
+    axios.post("http://localhost:3000/people", obj);
 
     //this.remove(); //stergem butonul dupa click
   }
